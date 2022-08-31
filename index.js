@@ -1,5 +1,9 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let arrSum = array.flatMap((a, i) => array.slice(i+1).map(b => a + b))
+  // let arrSum = array.flatMap((i) => array.slice(i+1))
+  return arrSum.includes(target)
+  // return arrSum
 }
 
 /* 
@@ -8,10 +12,18 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  get all possibilities of the array and assign it to variable
+  search each number for the target
+  (I know! It's not efficient at all, I can't think of another solution!)
 */
 
 /*
   Add written explanation of your solution here
+  arrSum is a new array that is crated from the map function.
+
+  (Used google to figure out how to create an array of every iteration)
+
+  used includes function to return a boolean if the target is within the new array.
 */
 
 // You can run `node index.js` to view these console logs
